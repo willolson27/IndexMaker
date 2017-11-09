@@ -10,7 +10,9 @@ import java.io.BufferedReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.IOException;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 public class IndexMaker
 {
@@ -48,6 +50,7 @@ public class IndexMaker
     // Create index:
 
     DocumentIndex index = new DocumentIndex();
+    TreeMap<String, IndexEntry> map = index.getMap();
 
     String line;
     int lineNum = 0;
@@ -59,9 +62,13 @@ public class IndexMaker
 
     // Save index:
 
-    for (IndexEntry entry : index)
+  /*  for (IndexEntry entry : index)
       outputFile.println(entry);
-
+*/
+    for (Map.Entry<String, IndexEntry> entry : map.entrySet())
+    {
+    	outputFile.println(entry);
+    }
     // Finish:
 
     inputFile.close();

@@ -6,16 +6,28 @@ public class IndexEntry {
 	
 	String word;
 	
-	public IndexEntry(String w, TreeSet<String> num) {
-		word = w;
-		nums = num;
+	/**
+	 * 
+	 * @param w
+	 * 
+	 */
+	public IndexEntry(String w) {
+		word = w.toUpperCase();
+	
 	}
 	
-	
+	/**
+	 * 
+	 * @param num
+	 */
 	public void add(int num) {
 		nums.add(Integer.toString(num));
 	}
 	
+	/**
+	 * 
+	 * 
+	 */
 	public String getWord() {
 
 		return word;

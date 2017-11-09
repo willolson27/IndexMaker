@@ -12,12 +12,30 @@ public class DocumentIndex {
 	 * @param num
 	 */
 	public void addWord(String word, int num) {
-		//TODO
+		word.toUpperCase();
+		if (!map.containsKey(word)) {
+			IndexEntry entry = new IndexEntry(word);
+			entry.add(num);
+			map.put(word, entry);
+		}
+		else
+			map.get(word).add(num);
 	}
 	
+	/**
+	 * 
+	 * @param line
+	 * @param lineNum
+	 */
 	public void addAllWords(String line, int lineNum) {
-		// TODO Auto-generated method stub
+		String[] words = line.split("\\W+");
+		for (String a : words) 
+			addWord(a, lineNum);
 		
+	}
+	
+	public TreeMap<String, IndexEntry> getMap() {
+		return map;
 	}
 
 }
