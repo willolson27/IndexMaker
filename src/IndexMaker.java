@@ -16,7 +16,64 @@ import java.util.TreeMap;
 
 public class IndexMaker
 {
-  public static void main(String[] args) throws IOException
+
+	public IndexMaker () {
+		
+	}
+
+	public String getIndexes(String input) throws IOException {
+		
+		    Scanner keyboard = new Scanner(System.in);
+		    String fileName;
+
+		    // Open input file:
+
+		    fileName = input;
+		    
+		    BufferedReader inputFile =
+		                 new BufferedReader(new FileReader(fileName), 1024);
+
+	/*	    // Create output file:
+ 
+		    fileName = output;
+
+		    PrintWriter outputFile =
+		                 new PrintWriter(new FileWriter(fileName)); */
+
+		    // Create index:
+
+		    DocumentIndex index = new DocumentIndex();
+		    TreeMap<String, IndexEntry> map = index.getMap();
+
+		    String line;
+		    int lineNum = 0;
+		    while ((line = inputFile.readLine()) != null)
+		    {
+		      lineNum++;
+		      index.addAllWords(line, lineNum);
+		    }
+
+		    // Save index:
+
+		  /*  for (IndexEntry entry : index)
+		      outputFile.println(entry);
+		*/
+		    String toOutput = "";
+		    for (Map.Entry<String, IndexEntry> entry : map.entrySet())
+		    {
+		    	toOutput+=(entry.getValue()) + "\n";
+		    }
+		    // Finish:
+		//    outputFile.println(toOutput);
+		    inputFile.close();
+	//	    outputFile.close();
+
+		    keyboard.close();
+
+		return toOutput;
+	}
+  
+	public static void main(String[] args) throws IOException
   {
     Scanner keyboard = new Scanner(System.in);
     String fileName;
@@ -68,7 +125,7 @@ public class IndexMaker
     String toOutput = "";
     for (Map.Entry<String, IndexEntry> entry : map.entrySet())
     {
-    	toOutput+=(entry) + "\n";
+    	toOutput+=(entry.getValue()) + "\n";
     }
     // Finish:
     outputFile.println(toOutput);

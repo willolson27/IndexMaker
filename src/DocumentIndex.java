@@ -13,7 +13,7 @@ public class DocumentIndex {
 	 */
 	public void addWord(String word, int num) {
 		word = word.toUpperCase();
-		if (word != "\t") {
+		if (!word.equals("")) {
 			if (!map.containsKey(word)) {
 				IndexEntry entry = new IndexEntry(word);
 				entry.add(num);

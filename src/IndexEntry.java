@@ -33,9 +33,13 @@ public class IndexEntry {
 		return word;
 	}
 	
+	/**
+	 * 
+	 */
 	public String toString() {
 		
 		String indexes = nums.toString();
+		System.out.print(word + " " + indexes.substring(1, indexes.length() - 1) + "\n");
 		return word + " " + indexes.substring(1, indexes.length() - 1);
 		
 	}
