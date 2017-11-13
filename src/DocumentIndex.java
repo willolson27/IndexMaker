@@ -12,14 +12,16 @@ public class DocumentIndex {
 	 * @param num
 	 */
 	public void addWord(String word, int num) {
-		word.toUpperCase();
-		if (!map.containsKey(word)) {
-			IndexEntry entry = new IndexEntry(word);
-			entry.add(num);
-			map.put(word, entry);
+		word = word.toUpperCase();
+		if (word != "\t") {
+			if (!map.containsKey(word)) {
+				IndexEntry entry = new IndexEntry(word);
+				entry.add(num);
+				map.put(word, entry);
+			}
+			else
+				map.get(word).add(num);
 		}
-		else
-			map.get(word).add(num);
 	}
 	
 	/**

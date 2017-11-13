@@ -21,7 +21,7 @@ public class IndexEntry {
 	 * @param num
 	 */
 	public void add(int num) {
-		nums.add(Integer.toString(num));
+		nums.add(Integer.toString(num).toUpperCase());
 	}
 	
 	/**

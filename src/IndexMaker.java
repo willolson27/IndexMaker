@@ -65,12 +65,13 @@ public class IndexMaker
   /*  for (IndexEntry entry : index)
       outputFile.println(entry);
 */
+    String toOutput = "";
     for (Map.Entry<String, IndexEntry> entry : map.entrySet())
     {
-    	outputFile.println(entry);
+    	toOutput+=(entry) + "\n";
     }
     // Finish:
-
+    outputFile.println(toOutput);
     inputFile.close();
     outputFile.close();
 
