@@ -4,8 +4,8 @@ import java.io.PrintWriter;
 import java.util.*;
 public class IndexMakerTester {
 
-	public static void main(String[] args) throws IOException {
-
+	public static void go() throws IOException {
+		
 		TreeMap<String, String> files = new TreeMap<String, String>();
 		String pb = "*******************************************";
 		IndexMaker maker = new IndexMaker();
@@ -20,7 +20,7 @@ public class IndexMakerTester {
 	    
 	    System.out.println("How many files do you want to get indexes for?");
 		num = in.nextInt();
-		
+
 		for (int i = 0; i < num; i++) {
 			System.out.println("Give a file name for indexes");
 			String fileNameInput = in.nextLine();
@@ -33,6 +33,13 @@ public class IndexMakerTester {
 	    }
 		outputFile.print(toOutput);
 		outputFile.close();
+		
+	}
+	
+	public static void main(String[] args) throws IOException {
+
+		go();
+		
 	}
 	
 }
