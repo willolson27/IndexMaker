@@ -7,6 +7,7 @@
 
 import java.io.FileReader;
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.IOException;
@@ -17,6 +18,8 @@ import java.util.TreeMap;
 public class IndexMaker
 {
 
+	private final static String ERROR = "ERROR: FILE NOT FOUND";
+	
 	public IndexMaker () {
 		
 	}
@@ -27,7 +30,7 @@ public class IndexMaker
 	 * 		-takes in the input file and adds "Index" to it to create the output file name
 	 * @param input - name of input file
 	 * @return String output - name of output file
-	 */
+     **/
 	public static String getOutputName(String input) {
 		
 		String ix = "Index";
@@ -52,6 +55,9 @@ public class IndexMaker
 		return output;
 		
 	}
+	
+	
+	
 //TODO javadocs
 	/**
 	 * 
@@ -67,8 +73,15 @@ public class IndexMaker
 
 	    // Open input file:
 
-	    BufferedReader inputFile = new BufferedReader(new FileReader(input), 1024);
-
+	    BufferedReader inputFile = null;
+	    
+	    try {
+	    	inputFile = new BufferedReader(new FileReader(input), 1024);
+	    }
+	    catch (FileNotFoundException e) {
+	    	System.out.println(ERROR);
+	    	System.exit(0);
+	    }
 	    // Create output file:
 
 	    PrintWriter outputFile = new PrintWriter(new FileWriter(output));
