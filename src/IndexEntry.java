@@ -2,22 +2,23 @@ import java.util.TreeSet;
 
 public class IndexEntry {
 
-	TreeSet<String> nums = new TreeSet<String>();
+	TreeSet<String> nums;
 	
 	String word;
 	
 	/**
 	 * 
-	 * @param w
+	 * @param w - word for a new index entry
 	 * 
 	 */
 	public IndexEntry(String w) {
 		word = w.toUpperCase();
-	
+		nums = new TreeSet<String>();
 	}
 	
 	/**
 	 * 
+	 * @method 															
 	 * @param num
 	 */
 	public void add(int num) {
@@ -39,7 +40,6 @@ public class IndexEntry {
 	public String toString() {
 		
 		String indexes = nums.toString();
-		System.out.print(word + " " + indexes.substring(1, indexes.length() - 1) + "\n");
 		return word + " " + indexes.substring(1, indexes.length() - 1);
 		
 	}
