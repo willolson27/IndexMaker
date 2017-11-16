@@ -36,8 +36,13 @@ public class DocumentIndex {
 		
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public TreeMap<String, IndexEntry> getMap() {
 		return map;
 	}
 
 }
+ 
