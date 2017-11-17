@@ -8,6 +8,8 @@ public class IndexEntry {
 	
 	/**
 	 * 
+	 * @method IndexEntry
+	 * 		-constructor that creates a new instance of the IndexEntry class with a givne word w
 	 * @param w - word for a new index entry
 	 * 
 	 */
@@ -18,7 +20,10 @@ public class IndexEntry {
 	
 	/**
 	 * 
-	 * @method 															
+	 * @user willolson27
+	 * @date November 17, 2017
+	 * @method add 
+	 * 		-adds a given lineNumber to the TreeSet												
 	 * @param num
 	 */
 	public void add(int num) {

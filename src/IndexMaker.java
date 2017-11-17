@@ -57,7 +57,6 @@ public class IndexMaker
 	}
 	
 	
-	
 //TODO javadocs
 	/**
 	 * 
@@ -115,34 +114,35 @@ public class IndexMaker
 	    System.out.println("Done.");
 	} 
   
-	public static void main(String[] args) throws IOException
-  {
-    Scanner keyboard = new Scanner(System.in);
-    String input, output;
+	public static void main(String[] args) throws IOException {
+		
+		Scanner keyboard = new Scanner(System.in);
+		String input, output;
 
-    // Open input file:
+		// Open input file:
 
-    if (args.length > 0)
-      input = args[0];
-    else
-    {
-      System.out.print("\nEnter input file name: ");
-      input = keyboard.nextLine().trim();
-    }
+		if (args.length > 0)
+			input = args[0];
+		else
+		{
+			System.out.print("\nEnter input file name: ");
+			input = keyboard.nextLine().trim();
+		}
 
-    // Create output file:
+		// Create output file:
 
-    if (args.length > 1)
-      output = args[1];
-    else
-      output = getOutputName(input);
+		if (args.length > 1)
+			output = args[1];
+		else
+			output = getOutputName(input);
+		
 
+		// Create index:
 
-    // Create index:
-
-    getIndexes(input, output);
+		getIndexes(input, output);
     
     
-    keyboard.close();
+		keyboard.close();
   }
+	
 }
